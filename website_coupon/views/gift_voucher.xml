@@ -73,12 +73,12 @@
                        </group>
                        <group string="Pricing">
                            <group>
-                               <field name="voucher_val" />
-                           </group>
-                           <group>
                                <field name="type" />
                            </group>
-                       </group>
+                           <group>
+                               <field name="voucher_val" />
+                           </group>
+                           </group>
                    </sheet>
                </form>
             </field>
