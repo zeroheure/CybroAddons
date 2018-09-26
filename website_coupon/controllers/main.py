@@ -61,8 +61,7 @@ class WebsiteCoupon(http.Controller):
             return request.redirect(base_url + '?coupon_not_available=1')
 
         order = request.website.sale_get_order(force_create=1)
-        gift_product = request.env['product.product'].sudo().search(
-            [('name', '=', 'Gift Coupon')], limit=1)
+        gift_product = coupon.voucher.gift_product_id
 
         # Make sure the gift product is not already in current order
         if any(True for line in order.order_line
