@@ -48,9 +48,6 @@ class GiftVoucher(models.Model):
     min_value = fields.Integer(string="Minimum Voucher Value", required=True)
     max_value = fields.Integer(string="Maximum Voucher Value", required=True)
     expiry_date = fields.Date(string="Expiry Date", required=True)
-    gift_product_id = fields.Many2one(
-        'product.product', string="Product", required=True,
-        default=lambda self: self.env.ref('website_coupon.discount_product'))
 
     def is_order_line_eligible(self, order_line):
         if self.voucher_type == 'product':
